@@ -7,16 +7,25 @@
     height: 100vh;
 
 }
-
+.test-main{
+    display: flex; 
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+img{
+    height: 300px;
+    margin: 20px 0;
+}
 .learn-main h2 {
     font-size: 20px;
 }
-
 
 .test-main p{
     color: #ddd8e5;
     text-align: center;
     padding: 15px;
+    margin: 0;
 }
 
 @media (min-width: 700px) { 
