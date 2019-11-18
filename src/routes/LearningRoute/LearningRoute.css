@@ -1,0 +1,28 @@
+.learn-main {
+    padding-top: 100px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #715E91;
+    height: 100vh;
+
+}
+
+.learn-main h2 {
+    font-size: 20px;
+}
+
+
+.test-main p{
+    color: #ddd8e5;
+    text-align: center;
+    padding: 15px;
+}
+
+@media (min-width: 700px) { 
+    .test-main{
+        width: 60%;
+        height: 400px;
+        box-shadow: 0 0px 70px 0 rgba(0,0,0,0.34),0 17px 50px 0 rgba(0,0,0,0.19);
+    }
+}

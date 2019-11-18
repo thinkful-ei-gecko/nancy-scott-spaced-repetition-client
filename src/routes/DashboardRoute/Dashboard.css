@@ -1,0 +1,33 @@
+.dash-container{
+    padding-top: 100px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    animation: change 15s infinite;
+}
+@keyframes change {
+    0%{background-color: #46385e;}
+    25%{background-color:  #370D80;}
+    50%{background-color: #715E91;}
+    75%{background-color: #370D80;}
+    100%{background-color: #46385e;}
+}
+.dash-container a {
+    color: #ddd8e5 ;
+    padding: 20px;
+    margin-top: 200px;
+}
+
+.dash-container a:visited {
+    color: #ddd8e5;
+}
+.category-container {
+    width: 70%;
+    margin-top:100px;
+}
+
+.category-container p {
+    color: #ddd8e5;
+    font-size: 25px;
+}
