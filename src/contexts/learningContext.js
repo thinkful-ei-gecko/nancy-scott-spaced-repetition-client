@@ -5,7 +5,8 @@ export const learn = {
     correct: null,
     words:[],
     user_id: null,
-    total_score: null
+    total_score: null,
+    language: []
 }
 
 const LearningContext = React.createContext({
@@ -14,7 +15,9 @@ const LearningContext = React.createContext({
     words:[],
     user_id: null,
     total_score: null,
-    setWords: () => {}
+    language: [],
+    setWords: () => {},
+    setLanguage: () => {}
 })
 
 export default LearningContext
@@ -25,7 +28,8 @@ export class LearningProvider extends Component {
         correct: null,
         words:[],
         user_id: null,
-        total_score: null
+        total_score: null,
+        language: []
     }
 
     setWords = (words) => {
@@ -34,12 +38,20 @@ export class LearningProvider extends Component {
             words: words
         })
     }
+
+    setLanguage = (language) => {
+        this.setState({
+            language: language,
+        })
+    }
     render() {
         const value = {
             words: this.state.words,
             user_id: this.state.user_id,
             total_score: this.state.total_score,
-            setWords: this.setWords
+            language: this.state.language,
+            setWords: this.setWords,
+            setLanguage: this.setLanguage,
         }
         return (
             <LearningContext.Provider value={value}>

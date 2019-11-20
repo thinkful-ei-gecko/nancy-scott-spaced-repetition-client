@@ -1,4 +1,4 @@
-.study-display-container {
+/* .study-display-container {
     padding: 40px;
     width: 90%;
     display: inline-block;
@@ -10,7 +10,7 @@
     width: 80%;
     text-align: center;
 
-    /* display: inline-block; */
+    display: inline-block;
 }
 
 .qcontainer p {
@@ -22,10 +22,10 @@
     padding: 20px 0;
 }
 
-/* .qcontainer img {
+.qcontainer img {
     margin: 0 2px;
     width: 100%;
     height:auto;
-} */
+}
 
-@media (min-width: 700px) { }
+@media (min-width: 700px) { } */

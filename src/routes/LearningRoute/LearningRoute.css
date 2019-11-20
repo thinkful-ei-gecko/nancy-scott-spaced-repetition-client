@@ -12,33 +12,60 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    min-height: 480px;
+    min-width: 430px;
+    box-shadow: 0 0px 70px 0 rgba(0,0,0,0.34),0 17px 50px 0 rgba(0,0,0,0.19);
 }
 .test-main img{
     height: 300px;
     margin: 20px 0;
 }
-.learn-main h2 {
+.learn-main-h2 {
     font-size: 20px;
+    color: #ddd8e5;
 }
 
-.test-main p{
+.test-main .question{
     color: #ddd8e5;
     text-align: center;
     padding: 15px;
     margin: 0;
 }
 
+.test-main .score {
+    color: #ddd8e5;
+    margin: 0;
+    padding: 0;
+    margin-bottom: 10px;
+}
+.answer-form {
+    width: 100%;
+    text-align: center;
+    margin-top: 20px;
+}
 .learn-main input {
-    width: 150px;
+    width: 300px;
+    height: 40px;
+    display: block;
 }
 .learn-main button {
-    width: 120px;
+    width: 300px;
+    height: 40px;
+}
+
+.guess-label {
+    color: #ddd8e5;
+}
+
+.learn-main-total {
+    color: #ddd8e5;
+    font-size: 18px;
 }
 
 @media (min-width: 700px) { 
     .test-main{
         width: 60%;
-        height: 400px;
-        box-shadow: 0 0px 70px 0 rgba(0,0,0,0.34),0 17px 50px 0 rgba(0,0,0,0.19);
+        height: 500px;
+
     }
 }
