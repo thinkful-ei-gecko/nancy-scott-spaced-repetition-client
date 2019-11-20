@@ -5,6 +5,7 @@
     flex-direction: column;
     align-items: center;
     animation: change 15s infinite;
+    overflow-y: auto;
 }
 @keyframes change {
     0%{background-color: #46385e;}

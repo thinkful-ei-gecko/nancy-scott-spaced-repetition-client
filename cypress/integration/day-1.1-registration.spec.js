@@ -26,20 +26,20 @@ describe(`User story: Register an account`, function() {
     cy.visit('/register')
 
     cy.get('section form').within(() => {
-      cy.get('label[for=registration-name-input]')
-        .should('have.text', 'Enter your name*')
+      // cy.get('label[for=registration-name-input]')
+      //   .should('have.text', 'Enter your name*')
       cy.get('input#registration-name-input')
         .should('have.attr', 'type', 'text')
         .and('have.attr', 'required', 'required')
 
-      cy.get('label[for=registration-username-input]')
-        .should('have.text', 'Choose a username*')
+      // cy.get('label[for=registration-username-input]')
+      //   .should('have.text', 'Choose a username*')
       cy.get('input#registration-username-input')
         .should('have.attr', 'type', 'text')
         .and('have.attr', 'required', 'required')
 
-      cy.get('label[for=registration-password-input]')
-        .should('have.text', 'Choose a password*')
+      // cy.get('label[for=registration-password-input]')
+      //   .should('have.text', 'Choose a password*')
       cy.get('input#registration-password-input')
         .should('have.attr', 'type', 'password')
         .and('have.attr', 'required', 'required')

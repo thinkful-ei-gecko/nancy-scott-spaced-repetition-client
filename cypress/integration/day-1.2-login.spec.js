@@ -63,14 +63,14 @@ describe(`User story: Login`, function() {
     cy.visit('/login')
 
     cy.get('section form').within(() => {
-      cy.get('label[for=login-username-input]')
-        .should('have.text', 'Username')
+      // cy.get('label[for=login-username-input]')
+      //   .should('have.text', 'Username')
       cy.get('input#login-username-input')
         .should('have.attr', 'type', 'text')
         .and('have.attr', 'required', 'required')
 
-      cy.get('label[for=login-password-input]')
-        .should('have.text', 'Password')
+      // cy.get('label[for=login-password-input]')
+      //   .should('have.text', 'Password')
       cy.get('input#login-password-input')
         .should('have.attr', 'type', 'password')
         .and('have.attr', 'required', 'required')

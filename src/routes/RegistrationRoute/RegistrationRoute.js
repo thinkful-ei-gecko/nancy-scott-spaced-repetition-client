@@ -16,9 +16,9 @@ class RegistrationRoute extends Component {
   render() {
     return (
       <section className='reg-container'>
-        {/* <p>
-          Practice learning a language with the spaced reptition revision technique.
-        </p> */}
+        <p>
+          Practice learning Algorithms with the spaced reptition revision technique.
+        </p>
         <div className='form-container'>
           <h2>Sign up</h2>
           <RegistrationForm
