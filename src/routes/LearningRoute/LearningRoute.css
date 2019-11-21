@@ -12,13 +12,18 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    min-height: 480px;
-    min-width: 430px;
+    min-height: 600px;
+    min-width: 320px;
+    width: 98%;
     box-shadow: 0 0px 70px 0 rgba(0,0,0,0.34),0 17px 50px 0 rgba(0,0,0,0.19);
 }
 .test-main img{
-    height: 300px;
-    margin: 20px 0;
+    min-width: 310px;
+    max-width: 420px;
+    width: 80%;
+
+    /* height: 300px;
+    margin: 20px 0; */
 }
 .learn-main-h2 {
     font-size: 20px;
@@ -36,7 +41,7 @@
     color: #ddd8e5;
     margin: 0;
     padding: 0;
-    margin-bottom: 10px;
+    margin-bottom: 5px;
 }
 .answer-form {
     width: 100%;
@@ -66,6 +71,5 @@
     .test-main{
         width: 60%;
         height: 500px;
-
     }
 }

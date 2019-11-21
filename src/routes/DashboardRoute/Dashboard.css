@@ -56,8 +56,8 @@
 
 .study-display-container {
     padding: 0;
-    margin: 0;
-    width: 90%;
+    margin: 0 auto;
+    width: 98%;
     display: inline-block;
 }
 
@@ -68,24 +68,23 @@
 }
 
 .language-header {
-    display: flex;
-    justify-content: space-around;
-    align-items: baseline; 
     margin-bottom: 40px;
+    text-align: center;
 }
 
 .q-list {
     list-style-type: none;
     margin: 0;
     padding: 0;
+    /* width: 95%; */
 }
 
 .qcontainer{
     background-color: rgb(0, 0, 0, 0.6);
     margin: 5px auto;
-    width: 80%;
+    /* width: 80%; */
     text-align: center;
-    min-width: 360px;
+    min-width: 320px;
     min-height: 500px;
 
 }
@@ -103,7 +102,9 @@
     /* padding-top: 10px ; */
 }
 .qcontainer img {
-    min-width: 360px;
+    min-width: 310px;
+    max-width: 420px;
+    width: 80%;
     /* width: 320px; */
     padding: 20px 0;
 }
@@ -114,4 +115,20 @@
     height:auto;
 } */
 
-@media (min-width: 700px) { }
+@media (min-width: 700px) { 
+    .language-header {
+        display: flex;
+        justify-content: space-around;
+        align-items: baseline; 
+        margin-bottom: 40px;
+    }
+    .qcontainer {
+        width: 80%;
+    }
+}
+
+@media (min-width: 1200px) { 
+    .qcontainer {
+        width: 40%;
+    }
+}
