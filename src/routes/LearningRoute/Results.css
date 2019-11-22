@@ -28,15 +28,10 @@
   width: 80%;
 }
 
-.results-h3 {
-  color: #ddd8e5;
-}
-
-.display-score-p {
-  color: #ddd8e5;
-}
-
-.display-feedback-p {
+.results-h3,
+.display-feedback-h4,
+.display-score-p,
+.display-feedback-p  {
   color: #ddd8e5;
 }
 

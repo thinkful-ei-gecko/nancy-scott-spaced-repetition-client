@@ -5,7 +5,8 @@
     align-items: center;
     background-color: #715E91;
     height: 100vh;
-
+    overflow-y: auto;
+    text-align: center;
 }
 .test-main{
     display: flex; 
@@ -15,12 +16,14 @@
     min-height: 600px;
     min-width: 320px;
     width: 98%;
+    height: auto;
     box-shadow: 0 0px 70px 0 rgba(0,0,0,0.34),0 17px 50px 0 rgba(0,0,0,0.19);
 }
 .test-main img{
     min-width: 310px;
     max-width: 420px;
     width: 80%;
+    margin-bottom: 10px;
 
     /* height: 300px;
     margin: 20px 0; */
