@@ -29,8 +29,6 @@ nav a {
 }
 
 @media (min-width: 500x) { 
-
-    
     .loggedin-info span {
         color: #ddd8e5;
         padding-right: 20px;

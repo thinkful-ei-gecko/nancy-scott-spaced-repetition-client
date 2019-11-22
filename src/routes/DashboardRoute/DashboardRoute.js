@@ -67,7 +67,7 @@ class DashboardRoute extends Component {
                   <h5 className="qcontainer-h5">{word.translation}</h5>
                   <p className="qcontainer-p">correct answer count: {word.correct_count}</p>
                   <p className="qcontainer-p">incorrect answer count: {word.incorrect_count}</p>
-                  <img src={`./imgAssets/${word.original}`} alt='algorithm question' />
+                  <img src={`%PUBLIC_URL%/imgAssets/${word.original}`} alt='algorithm question' />
                 </li>
               ))}
             </ul>
