@@ -101,7 +101,7 @@ class LearningRoute extends Component {
         <span style={{ display: 'none' }}>{this.state.nextWord}</span>
         <p className="learn-main-total">Your total score is: {totalScore}</p>
         <div className='test-main'>
-          <p className="question">What is the name of this algorithm?</p>
+          {/* <p className="question">What is the name of this algorithm?</p> */}
           <img src={`./imgAssets/${nextWord}`} alt='algorithm question' />
           <span className="score">You have answered this word correctly {wordCorrectCount} times.</span>
           <span className="score">You have answered this word incorrectly {wordIncorrectCount} times.</span>
