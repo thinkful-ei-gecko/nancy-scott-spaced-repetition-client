@@ -1,4 +1,5 @@
 # AlgorithMe Client
+Created by: Scott Schroeder and Chitchanok Nancy Phiukhao
 
 ## About
 AlgorithMe is an application to help users learn common sort, search, and traversal algorithms. This client is designed to work with the AlgorithMe server found here: 
@@ -11,7 +12,7 @@ AlgorithMe is an application to help users learn common sort, search, and traver
 - React Router
 - HTML5
 - CSS3
-- Zeits
+- Zeit
 - Tests:
   - Cypress
 
