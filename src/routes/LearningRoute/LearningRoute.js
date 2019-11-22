@@ -15,7 +15,7 @@ class LearningRoute extends Component {
     wordCorrectCount: 0,
     wordIncorrectCount: 0,
     qAnswered: false,
-    correct: null,
+    isCorrect: null,
     // resAnswer: null,
     // upcomingWord: null,
     // resCorrectCount: null,
@@ -95,7 +95,7 @@ class LearningRoute extends Component {
   displayQuestion = () => {
     const { nextWord, wordCorrectCount, wordIncorrectCount, totalScore } = this.state
     return (
-      <section className='learn-main container'>
+      <section className='learn-main container' aria-live="polite">
         <h2 className="cypress" style={{ display: 'none' }}>Translate the word:</h2>
         <h3 className="learn-main-h2">What is the name of this algorithm?</h3>
         <span style={{ display: 'none' }}>{this.state.nextWord}</span>
@@ -108,7 +108,7 @@ class LearningRoute extends Component {
         </div>
         <form className="answer-form">
           <label htmlFor="learn-guess-input" className="guess-label" style={{ display: 'none' }}>What's the translation for this word?</label>
-          <input id="learn-guess-input" type="text" onChange={this.updateAnswer} required></input>
+          <input id="learn-guess-input" type="text" autofocus="true" onChange={this.updateAnswer} required></input>
           <button type="submit" onClick={this.handleAnswer}>Submit your answer</button>
         </form>
       </section>
@@ -125,7 +125,7 @@ class LearningRoute extends Component {
       // wordCorrectCount,
       // wordIncorrectCount,
       qAnswered,
-      correct,
+      isCorrect,
     } = this.state;
 
     // console.log(upcomingWord);
@@ -134,7 +134,7 @@ class LearningRoute extends Component {
       <>
         {qAnswered
           ? <Results
-            correct={correct}
+            correct={isCorrect}
             nextWord={prevWord}
             answer={answer}
             guess={guess}

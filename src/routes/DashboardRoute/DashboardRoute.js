@@ -52,7 +52,7 @@ class DashboardRoute extends Component {
               <h4 className="dash-h4">Total correct answers: {language.total_score}</h4>
             </div>
             <div className="dash-body">
-              <Link style={{ textDecoration: 'none' }} to='/learn'>Start practicing</Link>
+              <Link tabIndex={1 } style={{ textDecoration: 'none' }} to='/learn'>Start practicing</Link>
               <h3 className="cypress" style={{ display: 'none'}}>Words to practice</h3>
               <h4 className="dash-h3">Algorithms to practice</h4>
 

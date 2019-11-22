@@ -13,7 +13,7 @@ export default function Results(props) {
 
   const displayCorrect = () => {
     return (
-      <section className="results">
+      <section className="results" aria-live="polite">
         <div className="shadow">
           <h2 className="cypress" style={{ display: "none" }}>You were correct! :D</h2>
           <h3 className="results-h3">You were correct!</h3>
@@ -23,14 +23,14 @@ export default function Results(props) {
           <img className="results-img" src={`./imgAssets/${nextWord}`} alt='algorithm question' />
           <p className="display-feedback-p">was {answer} and you chose {guess}!</p>
         </div>
-        <button className="next-button" type="button" onClick={() => {handleNextClick()}}>Try another word!</button>
+        <button className="next-button" autofocus="true" type="button" onClick={() => {handleNextClick()}}>Try another word!</button>
       </section >
     )
   }
 
   const displayIncorrect = () => {
     return (
-      <section className="results">
+      <section className="results" aria-live="polite">
         <div className="shadow">
           <h2 className="cypress" style={{ display: "none" }}>Good try, but not quite right :(</h2>
           <h3 className="results-h3">Good try, but not quite right</h3>
@@ -40,7 +40,7 @@ export default function Results(props) {
           <img className="results-img" src={`./imgAssets/${nextWord}`} alt='algorithm question' />
           <p className="display-feedback-p">was {answer} and you chose {guess}!</p>
         </div>
-        <button className="next-button" type="button" onClick={() => {handleNextClick()}}>Try another word!</button>
+        <button className="next-button" type="button" autofocus="true" onClick={() => {handleNextClick()}}>Try another word!</button>
       </section>
     )
   }
