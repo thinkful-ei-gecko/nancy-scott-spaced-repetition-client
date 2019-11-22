@@ -1,4 +1,5 @@
 import React from 'react';
+import images from '../../imgAssets/index'
 import './Results.css';
 
 export default function Results(props) {
@@ -11,6 +12,11 @@ export default function Results(props) {
     handleNextClick,
   } = props;
 
+  const findImage = (string) =>{
+    const idx = string.indexOf('.')
+    return string.slice(0, idx)
+  }
+
   const displayCorrect = () => {
     return (
       <section className="results" aria-live="polite">
@@ -20,7 +26,7 @@ export default function Results(props) {
           <p className="display-score-p">Your total score is: {totalScore}</p>
           <p className="display-feedback-p" style={{ display: 'none' }}>The correct translation for</p>
           <h4 className="display-feedback-h4">The correct name for this algorithm</h4>
-          <img className="results-img" src={`./imgAssets/${nextWord}`} alt='algorithm question' />
+          <img className="results-img" src={images[`${findImage(nextWord)}`]} alt='algorithm question' />
           <p className="display-feedback-p">was {answer} and you chose {guess}!</p>
         </div>
         <button className="next-button" autofocus="true" type="button" onClick={() => {handleNextClick()}}>Try another word!</button>
@@ -37,7 +43,7 @@ export default function Results(props) {
           <p className="display-score-p">Your total score is: {totalScore}</p>
           <p className="display-feedback-p" style={{ display: 'none' }}>The correct translation for</p>
           <h4 className="display-feedback-h4">The correct name for this algorithm</h4>
-          <img className="results-img" src={`./imgAssets/${nextWord}`} alt='algorithm question' />
+          <img className="results-img" src={images[`${findImage(nextWord)}`]} alt='algorithm question' />
           <p className="display-feedback-p">was {answer} and you chose {guess}!</p>
         </div>
         <button className="next-button" type="button" autofocus="true" onClick={() => {handleNextClick()}}>Try another word!</button>
