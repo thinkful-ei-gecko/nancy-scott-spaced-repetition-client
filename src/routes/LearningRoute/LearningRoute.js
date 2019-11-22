@@ -7,17 +7,19 @@ import './LearningRoute.css'
 
 class LearningRoute extends Component {
   state = {
+    guess: '',
     answer: '',
     nextWord: '',
+    prevWord: null,
     totalScore: 0,
     wordCorrectCount: 0,
     wordIncorrectCount: 0,
     qAnswered: false,
     correct: null,
-    resAnswer: null,
-    upcomingWord: null,
-    resCorrectCount: null,
-    resIncorrectCount: null,
+    // resAnswer: null,
+    // upcomingWord: null,
+    // resCorrectCount: null,
+    // resIncorrectCount: null,
   }
 
   componentDidMount() {
@@ -30,18 +32,46 @@ class LearningRoute extends Component {
         (!res.ok) ? res.json().then(e => Promise.reject(e))
           : res.json()
       )
-      .then(result => { this.setState(result) })
+      .then(result => { 
+        this.setState(result) 
+        this.setState({ prevWord: result.nextWord })
+      })
+  }
+
+  handleNextClick = () => {
+    fetch(`${config.API_ENDPOINT}/language/head`, {
+      headers: {
+        'Authorization': `bearer ${TokenService.getAuthToken()}`
+      }
+    })
+      .then(res =>
+        (!res.ok) ? res.json().then(e => Promise.reject(e))
+          : res.json()
+      )
+      .then(result => {
+        // this.setState(result) 
+        this.setState({
+          qAnswered: false,
+          answer: '',
+          guess: '',
+          totalScore: result.totalScore,
+          nextWord: result.nextWord,
+          wordCorrectCount: result.wordCorrectCount,
+          wordIncorrectCount: result.wordIncorrectCount,
+          prevWord: result.nextWord,
+        })
+      })
   }
 
   updateAnswer = (e) => {
     console.log(e.target.value)
     this.setState({
-      answer: e.target.value
+      guess: e.target.value
     })
   }
   handleAnswer = (e) => {
     e.preventDefault()
-    const { answer } = this.state;
+    const { guess } = this.state;
     console.log('in handleAnswer')
     fetch(`${config.API_ENDPOINT}/language/guess`, {
       method: 'POST',
@@ -50,33 +80,26 @@ class LearningRoute extends Component {
         'Authorization': `bearer ${TokenService.getAuthToken()}`
       },
       body: JSON.stringify({
-        guess: answer
+        guess: guess
       })
     })
       .then(res =>
         (!res.ok) ? res.json().then(e => Promise.reject(e))
           : res.json()
       ).then(result => {
-        this.setState({
-          qAnswered: true,
-          correct: result.isCorrect,
-          resAnswer: result.answer,
-          upcomingWord: result.nextWord,
-          resCorrectCount: result.wordCorrectWordCount,
-          resIncorrectCount: result.wordIncorrectWordCount,
-          totalScore: result.totalScore,
+        this.setState({ qAnswered: true })
+        this.setState(result)
         })
-      })
   }
 
   displayQuestion = () => {
-    const { nextWord, wordCorrectCount, wordIncorrectCount, total_score } = this.state
+    const { nextWord, wordCorrectCount, wordIncorrectCount, totalScore } = this.state
     return (
       <section className='learn-main container'>
         <h2 className="cypress" style={{ display: 'none' }}>Translate the word:</h2>
         <h3 className="learn-main-h2">What is the name of this algorithm?</h3>
         <span style={{ display: 'none' }}>{this.state.nextWord}</span>
-        <p className="learn-main-total">Your total score is: 999{total_score}</p>
+        <p className="learn-main-total">Your total score is: {totalScore}</p>
         <div className='test-main'>
           <p className="question">What is the name of this algorithm?</p>
           <img src={`./imgAssets/${nextWord}`} alt='algorithm question' />
@@ -96,24 +119,27 @@ class LearningRoute extends Component {
   render() {
     const {
       answer,
+      totalScore,
+      guess,
+      prevWord,
+      // wordCorrectCount,
+      // wordIncorrectCount,
       qAnswered,
       correct,
-      resAnswer,
-      upcomingWord,
-      resCorrectCount,
-      resIncorrectCount,
-      totalScore
     } = this.state;
+
+    // console.log(upcomingWord);
 
     return (
       <>
         {qAnswered
           ? <Results
             correct={correct}
-            nextWord={upcomingWord}
-            answer={resAnswer}
-            guess={answer}
+            nextWord={prevWord}
+            answer={answer}
+            guess={guess}
             totalScore={totalScore}
+            handleNextClick={this.handleNextClick}
           />
           : this.displayQuestion()
         }

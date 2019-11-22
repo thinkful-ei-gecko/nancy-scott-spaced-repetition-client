@@ -38,8 +38,7 @@ class DashboardRoute extends Component {
   }
   render() {
 
-    const { language, total_score } = this.context;
-    console.log(this.context.total_score);
+    const { language } = this.context;
 
     // let studyDisplay;
     // if (this.state.studyMode) {
@@ -50,17 +49,12 @@ class DashboardRoute extends Component {
           <div className='category-container'>
             <div className="language-header">
               <h2 className="dash-h2">{language.name}</h2>
-
-
-              {/* FIX total_score */}
-              
-
-              <h4 className="dash-h4">Total correct answers: 7{total_score}</h4>
+              <h4 className="dash-h4">Total correct answers: {language.total_score}</h4>
             </div>
             <div className="dash-body">
               <Link style={{ textDecoration: 'none' }} to='/learn'>Start practicing</Link>
               <h3 className="cypress" style={{ display: 'none'}}>Words to practice</h3>
-              <h3 className="dash-h3">Algorithms to practice</h3>
+              <h4 className="dash-h3">Algorithms to practice</h4>
 
             </div>
 
