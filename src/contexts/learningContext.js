@@ -33,7 +33,6 @@ export class LearningProvider extends Component {
     }
 
     setWords = (words) => {
-        console.log('in context setting words', words)
         this.setState({
             words: words
         })

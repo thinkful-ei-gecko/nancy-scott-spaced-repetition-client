@@ -1,4 +1,21 @@
-# Spaced Repetition Capstone
+# AlgorithMe Client
+
+## About
+AlgorithMe is an application to help users learn common sort, search, and traversal algorithms. This client is designed to work with the AlgorithMe server found here: 
+- https://github.com/thinkful-ei-gecko/nancy-scott-spaced-rep-api
+- Live: https://algorithme.now.sh/
+
+## Tech Stacks 
+
+- ReactJS
+- React Router
+- HTML5
+- CSS3
+- Zeits
+- Tests:
+  - Cypress
+
+
 
 ## Setup
 
@@ -9,7 +26,7 @@ To setup the application
 
 The project expects you have the Spaced repetition API project setup and running on http://localhost:8000.
 
-Find instructions to setup the API here https://github.com/Thinkful-Ed/spaced-repetition-api.
+Find instructions to setup the API here https://github.com/thinkful-ei-gecko/nancy-scott-spaced-rep-api
 
 ## Running project
 
