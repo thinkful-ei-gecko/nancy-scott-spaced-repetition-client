@@ -2,11 +2,12 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import TokenService from '../../services/token-service'
 import config from '../../config'
-// import StudyRoute from '../StudyRoute/StudyRoute'
+import images from '../../imgAssets/index'
+
 import './Dashboard.css'
-// import '../StudyRoute/StudyRoute.css'
+
 import LearningContext from '../../contexts/learningContext'
-// import LearningRoute from '../LearningRoute/LearningRoute'
+
 
 class DashboardRoute extends Component {
 
@@ -20,6 +21,7 @@ class DashboardRoute extends Component {
       studyMode: true
     })
   }
+
 
   componentDidMount() {
     fetch(`${config.API_ENDPOINT}/language`, {
@@ -36,14 +38,15 @@ class DashboardRoute extends Component {
         this.context.setLanguage(result.language);
       })
   }
+
+  findImage = (string) =>{
+    const idx = string.indexOf('.')
+    return string.slice(0, idx)
+  }
   render() {
 
     const { language } = this.context;
 
-    // let studyDisplay;
-    // if (this.state.studyMode) {
-    //   studyDisplay = <StudyRoute />
-    // }
     return (
         <section className='dash-container'>
           <div className='category-container'>
@@ -67,7 +70,7 @@ class DashboardRoute extends Component {
                   <h5 className="qcontainer-h5">{word.translation}</h5>
                   <p className="qcontainer-p">correct answer count: {word.correct_count}</p>
                   <p className="qcontainer-p">incorrect answer count: {word.incorrect_count}</p>
-                  <img src={`%PUBLIC_URL%/imgAssets/${word.original}`} alt='algorithm question' />
+                  <img src={images[`${this.findImage(word.original)}`]} alt='algorithm question' />
                 </li>
               ))}
             </ul>

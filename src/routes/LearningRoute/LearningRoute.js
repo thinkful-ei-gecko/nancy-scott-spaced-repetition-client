@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import config from '../../config'
 import TokenService from '../../services/token-service'
 import Results from './Results';
+import images from '../../imgAssets/index'
 import './LearningRoute.css'
 
 
@@ -92,6 +93,11 @@ class LearningRoute extends Component {
         })
   }
 
+  findImage = (string) =>{
+    const idx = string.indexOf('.')
+    return string.slice(0, idx)
+  }
+
   displayQuestion = () => {
     const { nextWord, wordCorrectCount, wordIncorrectCount, totalScore } = this.state
     return (
@@ -102,7 +108,7 @@ class LearningRoute extends Component {
         <p className="learn-main-total">Your total score is: {totalScore}</p>
         <div className='test-main'>
           {/* <p className="question">What is the name of this algorithm?</p> */}
-          <img src={`./imgAssets/${nextWord}`} alt='algorithm question' />
+          <img src={images[`${this.findImage(nextWord)}`]} alt='algorithm question' />
           <span className="score">You have answered this word correctly {wordCorrectCount} times.</span>
           <span className="score">You have answered this word incorrectly {wordIncorrectCount} times.</span>
         </div>
