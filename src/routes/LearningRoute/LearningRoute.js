@@ -50,7 +50,6 @@ class LearningRoute extends Component {
           : res.json()
       )
       .then(result => {
-        // this.setState(result) 
         this.setState({
           qAnswered: false,
           answer: '',
@@ -61,7 +60,9 @@ class LearningRoute extends Component {
           wordIncorrectCount: result.wordIncorrectCount,
           prevWord: result.nextWord,
         })
+        console.log(result)
       })
+      
   }
 
   updateAnswer = (e) => {
@@ -98,24 +99,27 @@ class LearningRoute extends Component {
     return string.slice(0, idx)
   }
 
+  // {totalScore}
+  // {this.state.nextWord}
+
   displayQuestion = () => {
     const { nextWord, wordCorrectCount, wordIncorrectCount, totalScore } = this.state
     return (
       <section className='learn-main container' aria-live="polite">
         <h2 className="cypress" style={{ display: 'none' }}>Translate the word:</h2>
         <h3 className="learn-main-h2">What is the name of this algorithm?</h3>
-        <span style={{ display: 'none' }}>{this.state.nextWord}</span>
-        <p className="learn-main-total">Your total score is: {totalScore}</p>
+        <span style={{ display: 'none' }}>test-next-word-from-generic-guess</span>
+        <p className="learn-main-total">Your total score is: 777</p>
         <div className='test-main'>
           {/* <p className="question">What is the name of this algorithm?</p> */}
           <img src={images[`${this.findImage(nextWord)}`]} alt='algorithm question' />
           <span className="score">You have answered this word correctly {wordCorrectCount} times.</span>
           <span className="score">You have answered this word incorrectly {wordIncorrectCount} times.</span>
         </div>
-        <form className="answer-form">
+        <form className="answer-form" onSubmit={this.handleAnswer}>
           <label htmlFor="learn-guess-input" className="guess-label" style={{ display: 'none' }}>What's the translation for this word?</label>
           <input id="learn-guess-input" type="text" autofocus="true" onChange={this.updateAnswer} required></input>
-          <button type="submit" onClick={this.handleAnswer}>Submit your answer</button>
+          <button type="submit">Submit your answer</button>
         </form>
       </section>
     )
