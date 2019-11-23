@@ -17,10 +17,7 @@ class LearningRoute extends Component {
     wordIncorrectCount: 0,
     qAnswered: false,
     isCorrect: null,
-    // resAnswer: null,
-    // upcomingWord: null,
-    // resCorrectCount: null,
-    // resIncorrectCount: null,
+
   }
 
   componentDidMount() {
@@ -50,6 +47,7 @@ class LearningRoute extends Component {
           : res.json()
       )
       .then(result => {
+   
         this.setState({
           qAnswered: false,
           answer: '',
@@ -66,7 +64,7 @@ class LearningRoute extends Component {
   }
 
   updateAnswer = (e) => {
-    console.log(e.target.value)
+
     this.setState({
       guess: e.target.value
     })
@@ -74,7 +72,7 @@ class LearningRoute extends Component {
   handleAnswer = (e) => {
     e.preventDefault()
     const { guess } = this.state;
-    console.log('in handleAnswer')
+ 
     fetch(`${config.API_ENDPOINT}/language/guess`, {
       method: 'POST',
       headers: {
@@ -108,10 +106,9 @@ class LearningRoute extends Component {
       <section className='learn-main container' aria-live="polite">
         <h2 className="cypress" style={{ display: 'none' }}>Translate the word:</h2>
         <h3 className="learn-main-h2">What is the name of this algorithm?</h3>
-        <span style={{ display: 'none' }}>test-next-word-from-generic-guess</span>
-        <p className="learn-main-total">Your total score is: 777</p>
+        <span style={{ display: 'none' }}>{nextWord}</span>
+        <p className="learn-main-total">Your total score is: {totalScore}</p>
         <div className='test-main'>
-          {/* <p className="question">What is the name of this algorithm?</p> */}
           <img src={images[`${this.findImage(nextWord)}`]} alt='algorithm question' />
           <span className="score">You have answered this word correctly {wordCorrectCount} times.</span>
           <span className="score">You have answered this word incorrectly {wordIncorrectCount} times.</span>
@@ -132,13 +129,11 @@ class LearningRoute extends Component {
       totalScore,
       guess,
       prevWord,
-      // wordCorrectCount,
-      // wordIncorrectCount,
       qAnswered,
       isCorrect,
     } = this.state;
 
-    // console.log(upcomingWord);
+
 
     return (
       <>

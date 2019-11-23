@@ -11,9 +11,6 @@ import LearningContext from '../../contexts/learningContext'
 
 class DashboardRoute extends Component {
 
-  // state = {
-  //   studyMode: false
-  // }
   static contextType = LearningContext;
 
   setStudy = () => {
@@ -81,19 +78,5 @@ class DashboardRoute extends Component {
 }
 
 export default DashboardRoute
-
-// return (
-//   <div className='study-container'>
-//       {this.context.words.map(word => {
-//           console.log(word.original)
-//           return <div className='qcontainer' key={word.id}>
-//               <p>{word.translation}</p>
-//               <img src={`./imgAssets/${word.original}`} alt='algorithm question' />
-//           </div>
-//       })}
-//   </div>
-// )
-// }
-// }
 
 
